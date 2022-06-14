@@ -1,0 +1,20 @@
+h2 {
+    text-align: center;
+    padding: 10px;
+    border: 2px black dashed;
+}
+
+.container {
+    text-align: center;
+}
+
+#boton_recarga {
+    margin: 20px;
+    border-radius: 9rem;
+    background-color: rgb(67, 241, 23);
+}
+
+body {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(25,168,195,0.8855917366946778) 24%, rgba(0,212,255,1) 100%);
+}

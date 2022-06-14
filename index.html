@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chistes del Chuck</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Aprobado por Chuck Norris</h1>
+        <img src="chuckchiquito.png" alt="">
+        <h2 class="value"></h2>
+        <button id="boton_recarga">Actualizar!</button>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+
+
+
+    <script>
+
+        function recargar_texto() {
+            h2_nuevo = document.querySelector('h2')
+            const boton_recargar = document.querySelector('boton_recarga')
+
+            $.getJSON('https://api.chucknorris.io/jokes/random', function (datos) {
+                console.log(datos.value)
+                h2_nuevo.textContent = datos.value
+
+            })
+        }
+        boton_recarga.addEventListener('click', function () {
+            location.reload
+            recargar_texto()
+        })
+    </script>
+
+
+
+</body>
+
+</html>
